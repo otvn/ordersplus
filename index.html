@@ -12,9 +12,75 @@
     <title>OrdersPlus</title>
 </head>
 <body>
-    <div>
+   <!-- Additional Dashboard Section (No class name conflicts) -->
+<div class="stats-section grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+  <!-- New Buyers Comparison -->
+  <div class="stat-card   bg-white  shadow-lg rounded-xl p-5">
+    <h3 class="text-lg font-semibold pt-16 mb-3 text-center text-gray-700">New Buyers Comparison</h3>
+    <canvas  class="pt-10" id="buyersLineChart" height="250"></canvas>
+  </div>
 
-    </div>
+  <!-- Returned Items -->
+  <div class="stat-card  bg-white  shadow-lg rounded-xl p-5 text-center">
+    <h3 class="text-lg font-semibold mb-3 text-2xl text-gray-700">Returned Items</h3>
+    <canvas id="returnedPieChart" height="100"></canvas>
+    <p class="text-2xl font-bold mt-4">116</p>
+  </div>
+
+  <!-- Sales Figure Comparison -->
+  <div class="stat-card bg-white shadow-lg rounded-xl p-5">
+    <h3 class="text-lg font-semibold mb-3 text-center pt-16 text-gray-700">Sales Figure Comparison</h3>
+    <canvas class="pt-10" id="salesBarChart" height="250"></canvas>
+    <div class=" bg-white  text-center mt-4 p-2 rounded-lg text-blue-800 font-semibold">Sydney</div>
+  </div>
+</div>
+
+<script>
+  const buyersLineChart = new Chart(document.getElementById("buyersLineChart"), {
+    type: "line",
+    data: {
+      labels: ["Jul", "Aug", "Sep", "Oct"],
+      datasets: [
+        {
+          label: "New Buyers",
+          data: [60, 70, 65, 80],
+          borderColor: "#3B82F6",
+          fill: false
+        },
+        {
+          label: "Returning Buyers",
+          data: [40, 50, 48, 55],
+          borderColor: "#F97316",
+          fill: false
+        }
+      ]
+    }
+  });
+
+  const returnedPieChart = new Chart(document.getElementById("returnedPieChart"), {
+    type: "doughnut",
+    data: {
+      labels: ["September", "October"],
+      datasets: [{
+        data: [30, 86],
+        backgroundColor: ["#F97316", "#3B82F6"]
+      }]
+    }
+  });
+
+  const salesBarChart = new Chart(document.getElementById("salesBarChart"), {
+    type: "bar",
+    data: {
+      labels: ["Jul", "Oct"],
+      datasets: [{
+        label: "Sales",
+        data: [95000, 167000],
+        backgroundColor: ["#9CA3AF", "#3B82F6"]
+      }]
+    }
+  });
+</script>
+
     <div class="dashboard">
 
         <div class="card orange">
@@ -107,12 +173,12 @@
   
      
         <div class="section">
-          <h1>Top Members</h1>
+          <h1 class="members-title">Top Members</h1>
           <div class="member-grid">
             <div class="member-card"> 
              
                 <img class="developer_image" src="./images/developer.jpg" alt="">
-            
+ 
               <p class="developer_des">Adam Gibson</p> 
             </div>
             <div class="member-card">     <img class="developer_image" src="./images/developer.jpg" alt="">

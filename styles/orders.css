@@ -145,10 +145,7 @@ body {
     cursor: pointer;
     text-align: center;
   }
-  .breakdown-grid {
-   display: flex;
-
-  }
+ 
 .breakdown-section{
     background-color: #0e51a7;
     padding: 30px;

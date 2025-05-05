@@ -96,129 +96,170 @@ body {
     margin-left: 1rem;
   }
 /* development section */
+/* development section */
 .team-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
- 
-    padding: 20px;
-    font-family: sans-serif;
-  }
-.team-wrapper>div{
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  font-family: sans-serif;
 }
-  .section {
-    background-color: #0e51a7;
-    /* background: #C99200; */
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    text-align: center;
-  }
 
-  .section h3 {
-    margin-bottom: 15px;
-  }
+.section {
+  background-color: #0e51a7;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
 
-  .member-grid {
-    display: grid;
-    grid-template-columns:repeat(3,1fr);
-    gap: 10px;
-   
-  }
+.section h3 {
+  margin-bottom: 15px;
+}
 
-  .member-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    text-align: center;
-    height: 300px;
-    width: 250px;
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
 
-  }
-.members-title{
+.member-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  text-align: center;
+  height: 300px;
+  width: 250px;
+}
+
+.members-title {
   font-size: 30px;
   padding-bottom: 10px;
 }
-.member-card img{
+
+.member-card img {
   padding-top: 10px;
-   width: 90%;
-   height: 70%;
-   padding-left: 20px;
+  width: 90%;
+  height: 70%;
+  padding-left: 20px;
   border-radius: 40%;
- 
-
 }
-.developer_des{
-    color: goldenrod;
-    padding-top: 20px;
-    font-size: 20px;
+
+.developer_des {
+  color: goldenrod;
+  padding-top: 20px;
+  font-size: 20px;
 }
-   /* Hide extra members initially */
-   .more-members {
-    display: none;
-  }
 
-  /* Show when checkbox is checked */
-  #toggle:checked ~ .more-members {
-    display: grid;
-  }
-
-  #toggle {
-    display: none;
-  }
-
-  .toggle-label {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 10px 20px;
-    background-color: #4d2a02;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-  }
- 
-.breakdown-section{
-    background-color: #0e51a7;
-    /* background-color: #C99200; */
-    padding: 30px;
+/* Hide extra members initially */
+.more-members {
+  display: none;
 }
+
+/* Show when checkbox is checked */
+#toggle:checked ~ .more-members {
+  display: grid;
+}
+
+#toggle {
+  display: none;
+}
+
+.toggle-label {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #4d2a02;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.breakdown-section {
+  background-color: #0e51a7;
+  padding: 30px;
+}
+
+.breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+}
+
+.category-title {
+  font-size: 20px;  /* Adjusted font size */
+}
+
+.category-icon {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.member-list {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+  /* Change grid layout for smaller screens */
+  .team-wrapper {
+      grid-template-columns: 1fr;
+  }
+
+  /* Adjust the member grid for mobile */
+  .member-grid {
+      grid-template-columns: 1fr;
+  }
+
+  /* Adjust breakdown grid for mobile */
   .breakdown-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr) ;
-    gap: 20px;
+      grid-template-columns: 1fr;
   }
 
-  .category-card {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.2s ease;
+  /* Make the member cards more responsive */
+  .member-card {
+      width: 100%;  /* Full width on mobile */
+      height: auto; /* Auto height to fit content */
   }
 
-  .category-card:hover {
-    transform: translateY(-4px);
+  /* Adjust text sizes on mobile */
+  .members-title {
+      font-size: 24px;
   }
 
   .category-title {
-    font-size: 3px;
-  
+      font-size: 18px;  /* Smaller font size for mobile */
   }
 
   .category-icon {
-    font-size: 60px;
-    margin-bottom: 10px;
+      font-size: 50px;  /* Smaller icon size */
   }
 
-  .member-list {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.6;
-   
+  /* Adjust font size in member description */
+  .developer_des {
+      font-size: 16px;
   }
- /* last 4 sections */
- 
+
+  /* Adjust the toggle button size */
+  .toggle-label {
+      font-size: 14px;  /* Smaller font size for mobile */
+      padding: 8px 16px;
+  }
+}

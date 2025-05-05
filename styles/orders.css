@@ -120,30 +120,37 @@ body {
 .member-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 20px;
+  justify-items: center; /* Ensures the cards are centered */
 }
 
 .member-card {
   background-color: #fff;
   padding: 20px;
-  border-radius: 6px;
+  border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   text-align: center;
-  height: 300px;
-  width: 250px;
+  width: 250px; /* Set width for the card */
+  height: 320px;
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+  transform: scale(1.05);
 }
 
 .members-title {
   font-size: 30px;
   padding-bottom: 10px;
+  color: white;
 }
 
 .member-card img {
   padding-top: 10px;
-  width: 90%;
-  height: 70%;
-  padding-left: 20px;
-  border-radius: 40%;
+  width: 120px; /* Set image width */
+  height: 120px; /* Set image height */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image fits in the circle */
 }
 
 .developer_des {
@@ -152,12 +159,10 @@ body {
   font-size: 20px;
 }
 
-/* Hide extra members initially */
 .more-members {
   display: none;
 }
 
-/* Show when checkbox is checked */
 #toggle:checked ~ .more-members {
   display: grid;
 }
@@ -202,7 +207,8 @@ body {
 }
 
 .category-title {
-  font-size: 20px;  /* Adjusted font size */
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 .category-icon {
@@ -218,48 +224,33 @@ body {
 
 /* Media Query for Mobile Devices */
 @media screen and (max-width: 768px) {
-  /* Change grid layout for smaller screens */
   .team-wrapper {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; /* One column for mobile */
   }
 
-  /* Adjust the member grid for mobile */
   .member-grid {
       grid-template-columns: 1fr;
   }
 
-  /* Adjust breakdown grid for mobile */
-  .breakdown-grid {
-      grid-template-columns: 1fr;
-  }
-
-  /* Make the member cards more responsive */
   .member-card {
-      width: 100%;  /* Full width on mobile */
-      height: auto; /* Auto height to fit content */
+      width: 100%; /* Make cards full-width on mobile */
+      height: auto; /* Allow height to auto adjust */
   }
 
-  /* Adjust text sizes on mobile */
   .members-title {
       font-size: 24px;
   }
 
   .category-title {
-      font-size: 18px;  /* Smaller font size for mobile */
+      font-size: 18px;
   }
 
   .category-icon {
-      font-size: 50px;  /* Smaller icon size */
+      font-size: 50px;
   }
 
-  /* Adjust font size in member description */
   .developer_des {
       font-size: 16px;
   }
-
-  /* Adjust the toggle button size */
-  .toggle-label {
-      font-size: 14px;  /* Smaller font size for mobile */
-      padding: 8px 16px;
-  }
 }
+
